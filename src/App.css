@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+.container {
+  width: 1200px;
+}
+.Map {
+  height: 600px;
 }
 
 .App-logo {

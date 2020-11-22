@@ -1,0 +1,162 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "product": [
+    {
+      "id": "22",
+      "name": "Small Metal Table",
+      "image": "images/product-f1.jpg",
+      "price": "$39.00"
+    },
+    {
+      "id": "23",
+      "name": "Unbranded",
+      "image": "images/product-f2.jpg",
+      "price": "$922.00"
+    },
+    {
+      "id": "24",
+      "name": "Sleek Frozen Chips",
+      "image": "images/product-f3.jpg",
+      "price": "$697.00"
+    },
+    {
+      "id": "25",
+      "name": "ErgonomicShirt",
+      "image": "images/product-f4.jpg",
+      "price": "$498.00"
+    },
+    {
+      "id": "26",
+      "name": "Intelligent",
+      "image": "images/product-f5.jpg",
+      "price": "$461.00"
+    },
+    {
+      "id": "27",
+      "name": "Handcrafted ",
+      "image": "images/product-f6.jpg",
+      "price": "$580.00"
+    },
+    {
+      "id": "28",
+      "name": "Tasty Frozen",
+      "image": "images/product-f7.jpg",
+      "price": "$776.00"
+    },
+    {
+      "id": "29",
+      "name": "Small Metal Table",
+      "image": "images/product-f1.jpg",
+      "price": "$39.00"
+    },
+    {
+      "id": "30",
+      "name": "Unbranded",
+      "image": "images/product-f2.jpg",
+      "price": "$922.00"
+    },
+    {
+      "id": "31",
+      "name": "Sleek Frozen Chips",
+      "image": "images/product-f3.jpg",
+      "price": "$697.00"
+    },
+    {
+      "id": "32",
+      "name": "ErgonomicShirt",
+      "image": "images/product-f4.jpg",
+      "price": "$498.00"
+    },
+    {
+      "id": "33",
+      "name": "Intelligent",
+      "image": "images/product-f5.jpg",
+      "price": "$461.00"
+    },
+    {
+      "id": "34",
+      "name": "Handcrafted ",
+      "image": "images/product-f6.jpg",
+      "price": "$580.00"
+    },
+    {
+      "id": "35",
+      "name": "Tasty Frozen",
+      "image": "images/product-f7.jpg",
+      "price": "$776.00"
+    }
+  ],
+  "blog": [
+    {
+      "id": "1",
+      "image": "images/blog.jpg",
+      "name": "Auctor gravida enim",
+      "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis",
+      "read": "Read Me"
+    },
+    {
+      "id": "2",
+      "image": "images/blog1.jpg",
+      "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis",
+      "name": "Maecenas ultricies",
+      "read": "Read Me"
+    },
+    {
+      "id": "1",
+      "image": "images/blog2.jpg",
+      "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis",
+      "name": "Auctor gravida enim",
+      "read": "Read Me"
+    },
+    {
+      "id": "2",
+      "image": "images/blog1.jpg",
+      "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis",
+      "name": "Maecenas ultricies",
+      "read": "Read Me"
+    },
+    {
+      "id": "1",
+      "image": "images/blog4.jpg",
+      "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis",
+      "name": "Auctor gravida enim",
+      "read": "Read Me"
+    }
+  ],
+  "featured": [
+    {
+      "id": "1",
+      "image": "images/product-1.jpg",
+      "name": "Simple product",
+      "price": "$60.00"
+    },
+    {
+      "id": "1",
+      "image": "images/product-2.jpg",
+      "name": "Simple product",
+      "price": "$60.00"
+    },
+    {
+      "id": "1",
+      "image": "images/product-3.jpg",
+      "name": "Simple product",
+      "price": "$60.00"
+    }
+  ]
+}
