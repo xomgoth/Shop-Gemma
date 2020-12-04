@@ -26,7 +26,11 @@ const LoginForm = (props) => {
 
             <form action="" onSubmit={handleSubmit} className=" rounded border-blue-500 border-opacity-25 border-t-2 shadow-2xl ">
 
-                <div className=" mb-5 mt-10">
+
+                {(error !== "") ? (
+                    <div className="error mt-5 text-center text-red-500">{error}</div>
+                ) : ""}
+                <div className=" mb-5 mt-5 ">
                     <label htmlFor="email" className="ml-5"> Email <span className="text-red-600">*</span></label> <br />
                     <input type="email" name="email" id="email" className="item border h-10 mx-5 rounded italic pl-3"
                         required

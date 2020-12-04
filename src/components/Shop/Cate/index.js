@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import Left from './OnLeft'
-import Right from './Right'
+import React, { useEffect, useState } from 'react'
+
 import {
     BrowserRouter as Router,
-    Link
+    Link,
+
 } from "react-router-dom";
-
-
-
-const Shop = () => {
+import OnLeft from '../OnLeft';
+import OnRight from './OnRight';
+const Cate = () => {
     const [cate, setCate] = useState([]);
 
     const Url = 'http://localhost:1337/categories';
@@ -28,17 +27,12 @@ const Shop = () => {
                 </p>
 
             </div>
-
-
             <div className="grid grid-cols-4 gap-10 mt-10 ">
-
-                <Left cate={cate} />
-                <Right />
+                <OnLeft cate={cate} />
+                <OnRight />
             </div>
-
-
         </div>
     )
 }
 
-export default Shop
+export default Cate

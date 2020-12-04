@@ -17,12 +17,17 @@ import Blogs from './components/Blogs';
 import Shop from './components/Shop';
 import Moi from './components/Moi';
 import LoginForm from './components/LoginForm';
+import Cate from './components/Shop/Cate';
+
+
 
 
 
 
 function App() {
   const Url_user = {
+    img: "images/PH09328.jpg",
+    name: "Ngọc Chuẩn",
     email: "chuan@gmail.com",
     password: "123123"
   }
@@ -37,7 +42,9 @@ function App() {
         email: details.email
       })
     } else {
-      console.log('next')
+      console.log("Không thành công");
+      setError("Sai thông tin đăng nhập!");
+
     }
   }
   const Logout = details => {
@@ -54,7 +61,7 @@ function App() {
       <div className="App">
         {(user.email !== "") ? (
           <div>
-            <Header Logout={Logout} />
+            <Header Logout={Logout} name={Url_user.name} img={Url_user.img} />
             <Menu />
 
             <Switch>
@@ -77,6 +84,10 @@ function App() {
 
               <Route path="/moi/:id">
                 <Moi />
+              </Route>
+
+              <Route path="/category/:id">
+                <Cate />
               </Route>
 
             </Switch>

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Pagination from '../Pagination';
-import Searchs from '../Searchs';
+
 
 const customStyles = {
     content: {
@@ -30,7 +30,7 @@ const Right = () => {
         start: 1,
         limit: 10,
         page: 1,
-        sort: ''
+
 
     })
 
@@ -72,7 +72,7 @@ const Right = () => {
 
     const [search, setSearch] = useState("");
 
-    const filterProductsByName = list.filter(product => product.Name.toLowerCase().includes(search.toLocaleLowerCase()))
+    const filterProduct = list.filter(product => product.Name.toLowerCase().includes(search.toLocaleLowerCase()))
 
 
 
@@ -90,12 +90,12 @@ const Right = () => {
                     onChange={e => setSearch(e.target.value)}
                     placeholder="search...." className=" py-2 mb-8 w-64 pl-4 border border-gray-500 ml-4 italic rounded " />
 
-                <h2 className="float-right py-2">Showing 1–16 Of 21 Results</h2>
+                <h2 className="float-right py-2">Showing 1–10 Of 10 Results</h2>
             </div>
 
             <div className="grid grid-cols-4 gap-5">
 
-                {filterProductsByName.map((post, index) => {
+                {filterProduct.map((post, index) => {
                     return <div key={index} className="col-span-1 text-left">
                         <div className="overflow-hidden">
                             <Link to="#">

@@ -1,9 +1,6 @@
 import React from 'react';
 
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 
@@ -26,16 +23,16 @@ const Contact = () => {
                         <h1 className="text-2xl font-bold mb-5">TELL US YOUR PROJECT</h1>
                         <div className="grid grid-cols-2 gap-5 ">
                             <div className="col-span-1 ">
-                                <input type="text" placeholder="Name *" className="bg-gray-100 border border-black-900 rounded w-full py-2" value="" />
-                                <input type="text" placeholder="Email *" className=" bg-gray-100 border border-black-900 rounded w-full  py-2 mt-10" value="" />
+                                <input type="text" placeholder="Name *" className="bg-gray-100 border border-black-900 rounded w-full py-2 italic pl-5" value="" />
+                                <input type="text" placeholder="Email *" className=" bg-gray-100 border border-black-900 rounded w-full  py-2 mt-10 italic pl-5" value="" />
                             </div>
                             <div className="col-span-1 ">
-                                <input type="text" placeholder="Phone *" className=" bg-gray-100 border border-black-900 rounded w-full py-2" value="" />
-                                <input type="text" placeholder="Subject *" className=" bg-gray-100 border border-black-900 rounded w-full  py-2 mt-10" value="" />
+                                <input type="text" placeholder="Phone *" className=" bg-gray-100 border border-black-900 rounded w-full py-2 italic pl-5" value="" />
+                                <input type="text" placeholder="Subject *" className=" bg-gray-100 border border-black-900 rounded w-full  py-2 mt-10 italic pl-5" value="" />
                             </div>
 
                         </div>
-                        <textarea name="" id="" rows="7" className="bg-gray-100 border border-black-900 rounded w-full  py-2 mt-10" placeholder="Message *">
+                        <textarea name="" id="" rows="7" className="bg-gray-100 border border-black-900 rounded w-full  py-2 mt-10 italic pl-5" placeholder="Message *">
 
                         </textarea>
 
@@ -69,7 +66,8 @@ const Contact = () => {
 
             </div>
             <div className="mt-20">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d238463.36753689905!2d105.752328!3d20.952912!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134532bef4bcdb7%3A0xbcc7a679fcba07f6!2zSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1606108789433!5m2!1svi!2sus" width="100%" height="600px" frameBorder={0} style={{ border: 0 }} allowFullScreen aria-hidden="false" tabIndex={0} />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d238463.36753689905!2d105.752328!3d20.952912!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134532bef4bcdb7%3A0xbcc7a679fcba07f6!2zSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1606108789433!5m2!1svi!2sus"
+                    width="100%" height="600px" frameBorder={0} style={{ border: 0 }} allowFullScreen aria-hidden="false" tabIndex={0} />
             </div>
         </div>
     )

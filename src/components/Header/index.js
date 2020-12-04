@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Header({ Logout }) {
+function Header({ Logout, name, img }) {
     return (
         <div className="container mx-auto">
             <div className=" grid grid-cols-3 gap-5">
@@ -16,9 +16,17 @@ function Header({ Logout }) {
 
                 </div>
                 <div className="col-span-1 flex justify-end my-8">
-                    <a href="#"><img src="../images/user.jpg" alt="" className="w-8 h-8 mr-5" onClick={Logout} /></a>
-                    <a href="#"><img src="../images/cart.jpg" alt="" className="w-8 h-8 mr-5" /></a>
-                    <a href="#"><img src="../images/search.jpg" alt="" className="w-8 h-8" /></a>
+                    <h1 className="text-blue-500 my-1">{name}</h1>
+                    <img src={img} alt="" className=" h-8 w-8 mr-5 rounded-full ml-3 " onClick={Logout} />
+                    {/* <a href="#">
+                        <img src="../images/user.jpg" alt="" className="w-8 h-8 mr-5"  />
+                    </a> */}
+                    <a href="#">
+                        <img src="../images/cart.jpg" alt="" className="w-8 h-8 mr-5" />
+                    </a>
+                    <a href="#">
+                        <img src="../images/search.jpg" alt="" className="w-8 h-8" />
+                    </a>
                 </div>
             </div>
             <hr />

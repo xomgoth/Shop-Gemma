@@ -3,14 +3,8 @@ import {
     BrowserRouter as Router,
     Link
 } from "react-router-dom";
-const Left = () => {
-    const [cate, setCate] = useState([]);
-    const Url = 'http://localhost:1337/categories'
-    useEffect(() => {
-        fetch(Url)
-            .then(response => response.json())
-            .then(data => setCate(data))
-    }, [])
+const OnLeft = ({ cate }) => {
+
     return (
         <div className="col-span-1 ml-5">
 
@@ -18,7 +12,15 @@ const Left = () => {
 
             { cate.map(cate => (
                 <div className="">
-                    <p className="py-5 "> <Link to="#" className="hover:text-yellow-500">{cate.Name}</Link><span className="float-right">(6)</span></p>
+                    <p
+                        className="py-5 ">
+                        <Link to={`/category/${cate.id}`}
+                            className="hover:text-yellow-500"
+                        >
+                            {cate.Name}
+                        </Link>
+                        <span className="float-right">(6)</span>
+                    </p>
                     <hr />
                 </div>
             ))}
@@ -42,7 +44,7 @@ const Left = () => {
                 <div className="row-span-1 mt-8">
                     <div className="grid grid-cols-3 gap-4 ">
 
-                        <Link to="#"> <img src="images/product-1.jpg" alt="" /></Link>
+                        <Link to="#"> <img src="../images/product-1.jpg" alt="" /></Link>
                         <div className="col-span-2">
                             <p>
                                 <Link to="#">Cras neque metus</Link>
@@ -55,7 +57,7 @@ const Left = () => {
                     </div>
                     <div className="grid grid-cols-3 gap-4 my-8">
 
-                        <Link to="#"> <img src="images/product-2.jpg" alt="" /></Link>
+                        <Link to="#"> <img src="../images/product-2.jpg" alt="" /></Link>
                         <div className="col-span-2">
                             <p>
                                 <Link to="#">Cras neque metus</Link>
@@ -68,7 +70,7 @@ const Left = () => {
                     </div>
                     <div className="grid grid-cols-3 gap-4 ">
 
-                        <Link to="#"> <img src="images/product-3.jpg" alt="" /></Link>
+                        <Link to="#"> <img src="../images/product-3.jpg" alt="" /></Link>
                         <div className="col-span-2">
                             <p>
                                 <Link to="#">Cras neque metus</Link>
@@ -105,4 +107,4 @@ const Left = () => {
     )
 }
 
-export default Left
+export default OnLeft
