@@ -20,7 +20,7 @@ const Shop = () => {
             </div>
 
 
-            <div className="grid grid-cols-4 gap-10 mt-20 ">
+            <div className="grid grid-cols-4 gap-10 mt-10 ">
 
                 <Left />
                 <Right />

@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
-
+import {
+    BrowserRouter as Router,
+    Link,
+    useParams
+} from "react-router-dom";
 export const Footer = () => {
 
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        const URL_ICONPRODUCT = 'http://localhost:3000/featured';
+        const URL_ICONPRODUCT = 'http://localhost:1337/products?_limit=3';
         fetch(URL_ICONPRODUCT)
             .then(response => response.json())
             .then(data => setProduct(data))
@@ -52,12 +56,16 @@ export const Footer = () => {
                     <div className="grid grid-rows-3 gap-5 mt-12">
                         {product.map((product) => (
                             <div className="row-span-1 flex">
-                                <img src={product.image} alt="" className="h-20" />
+                                <img src={
+                                    product.Image.map(item => {
+                                        return `http://localhost:1337${item.url}`;
+                                    })
+                                } alt="" className="h-20" />
                                 <div className="ml-5 font-bold">
-                                    <a href="#">
-                                        <p className="hover:text-teal-500">{product.name}</p>
-                                    </a>
-                                    <span className="text-teal-500">{product.price}</span>
+
+                                    <p className="hover:text-teal-500"> <Link to="#">{product.Name} </Link> </p>
+
+                                    <span className="text-teal-500">${product.Price}</span>
                                 </div>
                             </div>
                         ))}
@@ -69,12 +77,15 @@ export const Footer = () => {
                     <div className="grid grid-rows-3 gap-5 mt-12">
                         {product.map((product) => (
                             <div className="row-span-1 flex">
-                                <img src={product.image} alt="" className="h-20" />
+                                <img src={product.Image.map(item => {
+                                    return `http://localhost:1337${item.url}`;
+                                })
+                                } alt="" className="h-20" />
                                 <div className="ml-5 font-bold">
                                     <a href="#">
-                                        <p className="hover:text-teal-500">{product.name}</p>
+                                        <p className="hover:text-teal-500">{product.Name}</p>
                                     </a>
-                                    <span className="text-teal-500">{product.price}</span>
+                                    <span className="text-teal-500">${product.Price}</span>
                                 </div>
                             </div>
                         ))}

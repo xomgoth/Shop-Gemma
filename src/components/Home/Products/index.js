@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import {
     BrowserRouter as Router,
+    Link,
 
-    Link
 } from "react-router-dom";
 const customStyles = {
     content: {
@@ -19,35 +19,42 @@ const customStyles = {
 };
 
 export const Product = () => {
+
     const [modal, setModal] = useState(false);
 
     const [list, setList] = useState([]);
+
+
+
     useEffect(() => {
-        const URL_PRODUCT = 'http://localhost:3000/product/?_limit=8/ ';
+        const URL_PRODUCT = 'http://localhost:1337/products?_limit=8 ';
         fetch(URL_PRODUCT)
             .then(response => response.json())
             .then(data => setList(data))
     }, []);
 
 
+
+
     return (
         <div className="container mx-auto ">
             <h1 className="text-center my-10 font-bold text-2xl">PRODUCT</h1>
-            {/* <a href="#"> <img src="images/add.png" alt="" className="h-5 w-5" onClick={() => setModal(true)} /></a> */}
-
             <div className="grid grid-cols-4 gap-5">
                 {list.map((post, index) => (
                     <div key={index} className="col-span-1 text-left">
-                        <div className="overflow-hidden">
-                            <a href="#">
-                                <img src={post.image} alt="" onClick={() => setModal(true)} className="transform  duration-500 hover:scale-110" />
-                            </a>
-                        </div>
-                        <a href="#">
-                            <p className=" font-bold mt-5 mb-3 hover:text-teal-500"> {post.name}</p>
-                        </a>
 
-                        <span className="text-teal-500 font-bold">{post.price}</span>
+                        <div className="overflow-hidden">
+
+                            <Link>
+                                <img src={`images/${post.Image[0].name}`} alt="" onClick={() => setModal(true)} className="transform  duration-500 hover:scale-110" />
+                            </Link>
+
+                        </div>
+                        <Link to={`/moi/${post.id}`}>
+                            <p className=" font-bold mt-5 mb-3 hover:text-teal-500"> {post.Name}</p>
+                        </Link>
+
+                        <span className="text-teal-500 font-bold">${post.Price}</span>
                         <div className="flex float-right">
 
                         </div>
@@ -132,5 +139,6 @@ export const Product = () => {
 
 
         </div>
+
     )
 }

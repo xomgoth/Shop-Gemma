@@ -11,9 +11,9 @@ const Contact = () => {
     return (
         <div>
             <div className="bg-gray-100 text-center">
-                <h1 className="text-3xl text-bold pt-5 ">Contact</h1>
+                <h1 className="text-3xl text-bold pt-10 ">Contact</h1>
 
-                <p className="pb-10"> <Link to="/"> Home</Link> /
+                <p className="pb-16"> <Link to="/"> Home</Link> /
                 <span className="text-yellow-500"><Link to="/contact"> Contact Us</Link></span>
                 </p>
 
@@ -69,10 +69,7 @@ const Contact = () => {
 
             </div>
             <div className="mt-20">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59615.84348749686!2d105.7173085051483!3d20.952907975995124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134532bef4bcdb7%3A0xbcc7a679fcba07f6!2zSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1605927001235!5m2!1svi!2s"
-                    className="Map w-full" >
-
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d238463.36753689905!2d105.752328!3d20.952912!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134532bef4bcdb7%3A0xbcc7a679fcba07f6!2zSMOgIMSQw7RuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1606108789433!5m2!1svi!2sus" width="100%" height="600px" frameBorder={0} style={{ border: 0 }} allowFullScreen aria-hidden="false" tabIndex={0} />
             </div>
         </div>
     )

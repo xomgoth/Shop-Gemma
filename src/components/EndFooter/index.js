@@ -16,7 +16,7 @@ export const EndFooter = () => {
                             </p>
                     </div>
                     <div className="col-span-1">
-                        <img src="images/payment.png" alt="" className="my-5 float-right" />
+                        <img src="../images/payment.png" alt="" className="my-5 float-right" />
                     </div>
                 </div>
             </div>

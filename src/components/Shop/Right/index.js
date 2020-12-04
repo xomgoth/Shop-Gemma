@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import {
     BrowserRouter as Router,
+    Link,
 
-    Link
 } from "react-router-dom";
+
+import Pagination from '../Pagination';
+import Searchs from '../Searchs';
+
 const customStyles = {
     content: {
         top: '50%',
@@ -14,63 +18,115 @@ const customStyles = {
 
         marginRight: '-50%',
         transform: 'translate(-50%, -60%)'
-
     }
 };
+
 const Right = () => {
     const [modal, setModal] = useState(false);
-
     const [list, setList] = useState([]);
+    const [totalProduct, setTotalProduct] = useState(0);
+
+    const [filter, setFilter] = useState({
+        start: 1,
+        limit: 10,
+        page: 1,
+        sort: ''
+
+    })
+
     useEffect(() => {
-        const URL_PRODUCT = 'http://localhost:3000/product/?_limit=12/ ';
-        fetch(URL_PRODUCT)
-            .then(response => response.json())
-            .then(data => setList(data))
-    }, []);
+        fetch('http://localhost:1337/products/count')
+            .then(res => res.json())
+            .then(data => setTotalProduct(data))
+    }, [])
+
+
+    useEffect(() => {
+        const URL_PRODUCT = `http://localhost:1337/products?_start=${filter.start}&_limit=${filter.limit}`;
+
+        function fetchData() {
+            fetch(URL_PRODUCT)
+                .then(response => response.json())
+                .then(data => setList(data))
+        }
+
+        fetchData();
+    }, [filter]);
+
+
+
+    function handlePageChange(newStart) {
+        let customStart;
+        if (newStart < filter.start) {
+            customStart = filter.start - filter.limit
+        } else if (newStart > filter.start) {
+            customStart = filter.start + filter.limit
+        }
+
+        setFilter({
+            ...filter,
+            start: customStart,
+            page: newStart
+        })
+    }
+
+    const [search, setSearch] = useState("");
+
+    const filterProductsByName = list.filter(product => product.Name.toLowerCase().includes(search.toLocaleLowerCase()))
+
+
+
 
     return (
 
         <div className="col-span-3 mr-5">
 
+            <div className="py-2" >
+
+                <label htmlFor="" className="ml-64"> SEARCH : </label>
+
+                <input type="text"
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                    placeholder="search...." className=" py-2 mb-8 w-64 pl-4 border border-gray-500 ml-4 italic rounded " />
+
+                <h2 className="float-right py-2">Showing 1–16 Of 21 Results</h2>
+            </div>
+
             <div className="grid grid-cols-4 gap-5">
 
-                {list.map((post, index) => (
-                    <div key={index} className="col-span-1 text-left">
+                {filterProductsByName.map((post, index) => {
+                    return <div key={index} className="col-span-1 text-left">
                         <div className="overflow-hidden">
-                            <a href="#">
-                                <img src={post.image} alt="" onClick={() => setModal(true)} className="transform  duration-500 hover:scale-110" />
-                            </a>
-                        </div>
-                        <a href="#">
-                            <p className=" font-bold mt-5 mb-3 hover:text-teal-500"> {post.name}</p>
-                        </a>
+                            <Link to="#">
 
-                        <span className="text-teal-500 font-bold">{post.price}</span>
+                                <img src={
+                                    post.Image.map(item => {
+
+                                        return `http://localhost:1337${item.url}`;
+                                    })
+                                }
+                                    alt={`${post.id}`} onClick={() => setModal(true)} className="transform  duration-500 hover:scale-110" />
+                            </Link>
+                        </div>
+                        <Link to={`/moi/${post.id}`}>
+                            <p className=" font-bold mt-5 mb-3 hover:text-teal-500" > {post.Name}</p>
+                        </Link>
+
+                        <span className="text-teal-500 font-bold">${post.Price}</span>
                         <div className="flex float-right">
 
                         </div>
                     </div>
-                ))}
+                })}
             </div>
             <div className="border border-gray-300 mt-20 flex justify-center ">
 
-                <button class="border-gray-300 border  hover:bg-yellow-500 hover:text-white  py-1 px-3 rounded my-4 ">
-                    <img src="images/left-arrow.png" alt="" className="h-2" />
-                </button>
-                <button class="border-gray-300 border bg-yellow-500  hover:text-white  py-1 px-3 rounded my-4 mx-5 ">
-                    1
-                </button>
-                <button class="border-gray-300 border  hover:bg-yellow-500 hover:text-white  py-1 px-3 rounded my-4">
-                    2
-                </button>
-                <button class="border-gray-300 border  hover:bg-yellow-500 hover:text-white  py-1 px-3 rounded my-4 mx-5">
-                    3
-                </button>
-                <button class="border-gray-300 border  hover:bg-yellow-500 hover:text-white  py-1 px-3 rounded my-4">
-                    <img src="images/next.png" alt="" className="h-2" />
-                </button>
+                <Pagination page={filter.page} limit={filter.limit} onPageChange={handlePageChange} totalProduct={totalProduct} />
 
             </div>
+
+
 
             <Modal
                 style={customStyles}
@@ -78,7 +134,7 @@ const Right = () => {
                 onRequestClose={() => setModal(false)}
             >
 
-                <div className="grid grid-cols-5 gap-10">
+                <div className="grid grid-cols-5 gap-10 " >
 
                     <div className="col-span-2">
                         <img src="images/product-f2.jpg" alt="" className="" />

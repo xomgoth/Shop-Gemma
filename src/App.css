@@ -1,15 +1,19 @@
 .container {
   width: 1200px;
 }
-.Map {
+/* .Map {
   height: 600px;
-}
-
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+.login {
+  width: 400px;
+}
+.item {
+  width: 350px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -91,7 +91,7 @@ const Left = () => {
             <h1 className="text-xl font-bold mt-8 mb-2">TAGS</h1>
             <hr />
             <div>
-                <div className="flex mt-10">
+                <div className="flex mt-10 ">
 
                     <p className="mr-5"><Link to="#" className="hover:text-yellow-500">CAMERA</Link></p>
                     <p className="mr-5"><Link to="#" className="hover:text-yellow-500">COMPUTER</Link></p>
